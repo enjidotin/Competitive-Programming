@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    long long int n, m, i, c, Max;
+    cin>>t;
+    while(t!=0)
+    {
+        cin>>n>>m;
+        Max=n*(n+1)/2;
+        if(m>=(n-1)&&m<=Max)
+        {
+            if(n==1&&(m==0||m==1))
+                cout<<m<<endl;
+            else if(n==2&&m==1)
+                cout<<m<<endl;
+            else if(m>=(n-1)&&m<=(n+1))
+                cout<<"2"<<endl;
+            else if(m>=(n+2)&&m<=(2*n))
+                cout<<"3"<<endl;
+            else
+            {
+                c=4;
+                if(n%2==0)
+                {
+                    for(i=2*n+1;i<=Max;i=i+n/2)
+                    {
+                        if(m>=i&&m<(i+n/2))
+                        {
+                            cout<<c<<endl;
+                            break;
+                        }
+                        c++;
+                    }
+                }
+                else
+                {
+                    for(i=2*n+1;i<=Max;i=i+n)
+                    {
+                        if(m>=i&&m<(i+n/2))
+                        {
+                            cout<<c<<endl;
+                            break;
+                        }
+                        c++;
+                        if(m>=(i+n/2)&&m<(i+n))
+                        {
+                            cout<<c<<endl;
+                            break;
+                        }
+                        c++;
+                    }
+                }
+            }
+        }
+        else
+            cout<<"-1"<<endl;
+        t--;
+    }
+    return 0;
+}
