@@ -8,7 +8,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        b = 64;
+        b = 65 - 1;
         cin >> a;
         if (a == 0)
         {
