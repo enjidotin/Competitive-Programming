@@ -49,6 +49,7 @@ int a[N];
 void solve()
 {
     int i, j, n, m;
+    cout << "hello world";
 }
 
 int main()
