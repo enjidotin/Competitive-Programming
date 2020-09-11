@@ -7,11 +7,33 @@
       "label": "echo",
       "type": "shell",
       "command": "echo Hello",
-      "args": ["-g", "a.cpp"],
+      "args": [
+        "-g",
+        "a.cpp"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "shell",
+      "label": "C/C++: cl.exe build active file",
+      "command": "cl.exe",
+      "args": [
+        "/Zi",
+        "/EHsc",
+        "/Fe:",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": "build"
     }
   ]
 }
