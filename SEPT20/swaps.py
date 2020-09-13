@@ -56,13 +56,18 @@ def rootofeqn(c):
 
 
 if __name__ == "__main__":
-    for __ in range(int(input())):
-        n = int(input())
+    file1 = open("../io/output.txt", "a")
+
+    for __ in range(1000000, 1000000000):
+        n = __
 
         sumofn = (n*(n+1)) / 2
 
         if sumofn % 2 != 0:
             print(0)
+            wr = str(0)+"\n"
+            file1.write(wr)
+
             continue
 
         c = ((3*n) - pow(n, 2) - 4) / 2
@@ -90,3 +95,6 @@ if __name__ == "__main__":
             temp -= m
 
         print(int(ans))
+        wr = str(int(ans))+"\n"
+        file1.write(wr)
+    file1.close()
